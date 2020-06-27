@@ -75,7 +75,7 @@ def show_stats(sentiment, df):
 
     stop_words = stopwords.words('english')
     for w in blob.words:
-        if w not in stop_words and not w.startswith("'"):
+        if w not in stop_words and w[0].isalpha():
             words.append(w)
 
     unique_words = Counter(words).keys()
